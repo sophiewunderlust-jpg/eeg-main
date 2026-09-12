@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools==75.8.0", "wheel==0.45.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "eeg-left-right-classifier"
+version = "0.1.0"
+description = "Leakage-aware left-versus-right fist EEG decoding"
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+license = {text = "MIT"}
+dependencies = [
+  "mne==1.9.0",
+  "numpy==2.1.3",
+  "scipy==1.14.1",
+  "scikit-learn==1.5.2",
+  "matplotlib==3.11.1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest==8.3.4"]
+
+[project.scripts]
+eeg-prepare = "eeg_lr.prepare:main"
+eeg-evaluate = "eeg_lr.evaluate:main"
+eeg-predict = "eeg_lr.predict:main"
+eeg-finalize = "eeg_lr.finalize:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

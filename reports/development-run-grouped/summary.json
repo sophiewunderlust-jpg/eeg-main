@@ -1,0 +1,23 @@
+{
+  "bandpower_logreg": {
+    "n_folds": 3,
+    "mean_balanced_accuracy": 0.6082672434510935,
+    "std_balanced_accuracy": 0.04876807917619521,
+    "min_balanced_accuracy": 0.5753424657534246,
+    "max_balanced_accuracy": 0.6642934390771449
+  },
+  "csp_logreg": {
+    "n_folds": 3,
+    "mean_balanced_accuracy": 0.5474044700793078,
+    "std_balanced_accuracy": 0.04639728207042802,
+    "min_balanced_accuracy": 0.5034246575342466,
+    "max_balanced_accuracy": 0.595890410958904
+  },
+  "majority_baseline": {
+    "n_folds": 3,
+    "mean_balanced_accuracy": 0.5,
+    "std_balanced_accuracy": 0.0,
+    "min_balanced_accuracy": 0.5,
+    "max_balanced_accuracy": 0.5
+  }
+}

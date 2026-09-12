@@ -1,0 +1,145 @@
+{
+  "recording": "S011R04.edf",
+  "run": 4,
+  "model": "bandpower.npz",
+  "accepted_trials": 15,
+  "rejected_trials": 0,
+  "note": "Offline cue-locked predictions; probabilities are not calibrated confidence.",
+  "predictions": [
+    {
+      "trial_index": 0,
+      "onset_s": 4.1,
+      "duration_s": 4.1,
+      "accepted": true,
+      "reasons": [],
+      "predicted_label": "left_fist",
+      "probability_right": 0.203798
+    },
+    {
+      "trial_index": 1,
+      "onset_s": 12.3,
+      "duration_s": 4.1,
+      "accepted": true,
+      "reasons": [],
+      "predicted_label": "left_fist",
+      "probability_right": 0.10094
+    },
+    {
+      "trial_index": 2,
+      "onset_s": 20.5,
+      "duration_s": 4.1,
+      "accepted": true,
+      "reasons": [],
+      "predicted_label": "left_fist",
+      "probability_right": 0.245493
+    },
+    {
+      "trial_index": 3,
+      "onset_s": 28.7,
+      "duration_s": 4.1,
+      "accepted": true,
+      "reasons": [],
+      "predicted_label": "right_fist",
+      "probability_right": 0.599328
+    },
+    {
+      "trial_index": 4,
+      "onset_s": 36.9,
+      "duration_s": 4.1,
+      "accepted": true,
+      "reasons": [],
+      "predicted_label": "left_fist",
+      "probability_right": 0.069815
+    },
+    {
+      "trial_index": 5,
+      "onset_s": 45.1,
+      "duration_s": 4.1,
+      "accepted": true,
+      "reasons": [],
+      "predicted_label": "left_fist",
+      "probability_right": 0.232415
+    },
+    {
+      "trial_index": 6,
+      "onset_s": 53.3,
+      "duration_s": 4.1,
+      "accepted": true,
+      "reasons": [],
+      "predicted_label": "right_fist",
+      "probability_right": 0.600395
+    },
+    {
+      "trial_index": 7,
+      "onset_s": 61.5,
+      "duration_s": 4.1,
+      "accepted": true,
+      "reasons": [],
+      "predicted_label": "left_fist",
+      "probability_right": 0.065331
+    },
+    {
+      "trial_index": 8,
+      "onset_s": 69.7,
+      "duration_s": 4.1,
+      "accepted": true,
+      "reasons": [],
+      "predicted_label": "left_fist",
+      "probability_right": 0.246512
+    },
+    {
+      "trial_index": 9,
+      "onset_s": 77.9,
+      "duration_s": 4.1,
+      "accepted": true,
+      "reasons": [],
+      "predicted_label": "right_fist",
+      "probability_right": 0.568656
+    },
+    {
+      "trial_index": 10,
+      "onset_s": 86.1,
+      "duration_s": 4.1,
+      "accepted": true,
+      "reasons": [],
+      "predicted_label": "left_fist",
+      "probability_right": 0.396843
+    },
+    {
+      "trial_index": 11,
+      "onset_s": 94.3,
+      "duration_s": 4.1,
+      "accepted": true,
+      "reasons": [],
+      "predicted_label": "left_fist",
+      "probability_right": 0.220326
+    },
+    {
+      "trial_index": 12,
+      "onset_s": 102.5,
+      "duration_s": 4.1,
+      "accepted": true,
+      "reasons": [],
+      "predicted_label": "left_fist",
+      "probability_right": 0.141872
+    },
+    {
+      "trial_index": 13,
+      "onset_s": 110.7,
+      "duration_s": 4.1,
+      "accepted": true,
+      "reasons": [],
+      "predicted_label": "left_fist",
+      "probability_right": 0.266565
+    },
+    {
+      "trial_index": 14,
+      "onset_s": 118.9,
+      "duration_s": 4.1,
+      "accepted": true,
+      "reasons": [],
+      "predicted_label": "right_fist",
+      "probability_right": 0.553859
+    }
+  ]
+}
