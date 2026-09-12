@@ -1,0 +1,30 @@
+{
+  "bandpower_lda": {
+    "n_folds": 3,
+    "mean_balanced_accuracy": 0.6015981735159818,
+    "std_balanced_accuracy": 0.05022862492412937,
+    "min_balanced_accuracy": 0.5616438356164384,
+    "max_balanced_accuracy": 0.657984859408796
+  },
+  "bandpower_logreg": {
+    "n_folds": 3,
+    "mean_balanced_accuracy": 0.6082672434510935,
+    "std_balanced_accuracy": 0.04876807917619521,
+    "min_balanced_accuracy": 0.5753424657534246,
+    "max_balanced_accuracy": 0.6642934390771449
+  },
+  "csp_lda": {
+    "n_folds": 3,
+    "mean_balanced_accuracy": 0.5586397500600818,
+    "std_balanced_accuracy": 0.038709224839439255,
+    "min_balanced_accuracy": 0.530281182408075,
+    "max_balanced_accuracy": 0.6027397260273972
+  },
+  "csp_logreg": {
+    "n_folds": 3,
+    "mean_balanced_accuracy": 0.5474044700793078,
+    "std_balanced_accuracy": 0.04639728207042802,
+    "min_balanced_accuracy": 0.5034246575342466,
+    "max_balanced_accuracy": 0.595890410958904
+  }
+}

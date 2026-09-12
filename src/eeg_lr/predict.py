@@ -39,7 +39,7 @@ def predict_arrays(x_volts: np.ndarray, model_path: Path) -> tuple[np.ndarray, n
         return (scores > 0).astype(int), expit(scores)
 
 
-def predict_edf(edf: Path, model_path: Path, run: int | None = None) -> dict:
+def predict_edf(edf: Path, model_path: Path, run: int | None = None, *, show_targets: bool = False) -> dict:
     if run is None:
         match = re.search(r'R(\d{2})\.edf$', edf.name, re.IGNORECASE)
         if not match:
@@ -62,6 +62,11 @@ def predict_edf(edf: Path, model_path: Path, run: int | None = None) -> dict:
                        probability_right=round(probability, 6))
         else:
             row.update(predicted_label=None, probability_right=None)
+        if show_targets:
+            # Attach the instructed target only AFTER the EEG-only prediction.
+            target = 'left_fist' if cue['label'] == 0 else 'right_fist'
+            row.update(correct_label=target,
+                       correct=(row['predicted_label'] == target) if cue['accepted'] else None)
         rows.append(row)
     return dict(recording=edf.name, run=run, model=model_path.name,
                 accepted_trials=len(labels), rejected_trials=len(rows)-len(labels),
@@ -75,9 +80,11 @@ def main() -> None:
     parser.add_argument('--model', type=Path, default=Path('models/bandpower.npz'))
     parser.add_argument('--run', type=int)
     parser.add_argument('--output', type=Path)
+    parser.add_argument('--show-targets', action='store_true',
+                        help='Display instructed labels from EDF annotations and prediction correctness; never used as model inputs')
     args = parser.parse_args()
     try:
-        result = predict_edf(args.edf.expanduser(), args.model, args.run)
+        result = predict_edf(args.edf.expanduser(), args.model, args.run, show_targets=args.show_targets)
     except (ValueError, FileNotFoundError) as exc:
         parser.exit(2, f'Error: {exc}\n')
     rendered = json.dumps(result, indent=2, allow_nan=False) + '\n'

@@ -1,0 +1,15 @@
+{
+  "mean_difference": 0.01947193935609267,
+  "paired_subject_bootstrap_95_ci": [
+    -0.010122114925819171,
+    0.0514963842213914
+  ],
+  "wins": 11,
+  "ties": 0,
+  "losses": 9,
+  "seed": 7,
+  "replicates": 10000,
+  "full_train_explained_variance": {
+    "32": 0.9788220143562973
+  }
+}

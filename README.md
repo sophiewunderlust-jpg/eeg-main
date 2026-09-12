@@ -2,7 +2,23 @@
 
 An end-to-end, offline motor-imagery classifier for the Neurotech@Berkeley FA26 software recruitment project. It opens EDF recordings, audits trials, compares two models, evaluates unseen people, and predicts from one raw EDF.
 
-**Main result:** the preselected band-power model achieved **52.1% mean per-person balanced accuracy** on 20 held-out subjects (95% subject-bootstrap interval **50.0–54.4%**). A timing-only comparator scored **52.5%**. This is a reproducible baseline and failure analysis, **not evidence of reliable neural decoding**.
+**Latest expanded experiment:** band power → PCA (32 components) → shrinkage LDA, developed on S001–S080, achieved **59.08% mean per-person balanced accuracy** on 25 usable, previously untouched participants from S081–S109. The same configuration trained on 10 people scored 55.35% on those same test people. See [expanded results](reports/expanded/REPORT.md) and [exclusions](reports/expanded/EXCLUSIONS.md).
+
+**Prediction artifact distinction:** `eeg-predict` still uses the original exported band-power logistic-regression model, which scored **52.1%** on S011–S030. The expanded PCA–LDA model is an experiment, not the artifact loaded by that command. Neither result establishes reliable brain control.
+
+## Follow-up experiments
+
+The original results below remain preserved. Subsequent work includes [LDA versus logistic regression](reports/lda-comparison/REPORT.md), [PCA before LDA](reports/pca-lda-comparison/REPORT.md), and the [expanded 80-person development experiment](reports/expanded/REPORT.md).
+
+The LDA/PCA follow-ups reused previously inspected S011–S030 and are exploratory. The expansion reassigned those people to development and froze its choice before reading S081–S109. Four intended final-test people had no usable trials under the fixed preprocessing rules: three had 128 Hz recordings and one failed amplitude rejection throughout.
+
+To reproduce the expansion with your local dataset:
+
+```bash
+python -m eeg_lr.expand_experiment --data-dir /path/to/data
+```
+
+It writes `reports/expanded/` and refuses to overwrite an existing completed selection. For a repeat run, supply a new directory with `--output reports/expanded-repeat`. No original model weights are overwritten.
 
 ## Quick start: predict without training
 
@@ -23,6 +39,14 @@ On Windows, activate with `.venv\Scripts\activate` instead. The download is opti
 The committed model is already trained. Output contains a left/right label and an **uncalibrated** right-class probability for each accepted cue; rejected cues have a reason and no prediction. This command supports this dataset's **imagery runs R04, R08, R12**, 64 expected channels and 160 Hz recordings. A renamed file needs `--run 4` (or 8/12). Other run types are deliberately rejected.
 
 Cue timestamps and durations locate trials, but the cue's **left/right value is not a classifier input**. This is offline, cue-locked classification—not continuous rest detection or real-time control. EDF's embedded annotations are read directly; a companion event file is not needed for prediction.
+
+To display the recorded target next to each prediction:
+
+```bash
+eeg-predict data/raw/S011/S011R04.edf --model models/bandpower.npz --show-targets
+```
+
+`correct_label` is the instructed movement from the EDF annotation; `predicted_label` is the model's decision; `correct` indicates whether they match (null for rejected trials). Targets are attached after prediction and never passed to the classifier. Recorded instructions do not prove what the participant actually imagined.
 
 ## Open an EDF
 
@@ -80,7 +104,7 @@ S001–S010 supplied **444 accepted trials** for development. The band-power mod
 | CSP + logistic regression | 54.4% ± 10.6% | 54.7% ± 4.6% | 53.1% ± 6.0% |
 | Majority baseline | 50.0% | 50.0% | 50.0% |
 
-Balanced accuracy is the average of left recall and right recall. Each person has equal weight in the unseen-person means. ± is the **population standard deviation across folds/people**, not a confidence interval. Run-grouped evaluation holds out R04, R08 or R12 globally, but the same people remain in training; it is a different, easier generalization question.
+Balanced accuracy is the average of left recall and right recall. Each person has equal weight in the unseen-person means. ± is the **sample standard deviation across folds/people**, not a confidence interval. Run-grouped evaluation holds out R04, R08 or R12 globally, but the same people remain in training; it is a different, easier generalization question.
 
 The slightly higher reserved CSP result does **not** trigger a post-test model switch. A 99-shuffle development permutation diagnostic gives p=0.02, but is exploratory after model selection and assumes within-run trial exchangeability. It does not establish a neural mechanism.
 

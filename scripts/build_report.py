@@ -53,7 +53,7 @@ The training resubstitution score is 76.1%, versus 56.0% development leave-one-p
 
 ## Frozen comparison
 
-| Model | Reserved balanced accuracy (mean ± population SD) |
+| Model | Reserved balanced accuracy (mean ± sample SD) |
 |---|---:|
 | Band power + logistic regression, selected | 52.1% ± 5.2% |
 | CSP + logistic regression | 53.1% ± 6.0% |

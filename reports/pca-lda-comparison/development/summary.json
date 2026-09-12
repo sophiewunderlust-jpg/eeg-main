@@ -1,0 +1,37 @@
+{
+  "no_pca": {
+    "n_folds": 10,
+    "mean_balanced_accuracy": 0.5663124585178363,
+    "std_balanced_accuracy": 0.11555180398160039,
+    "min_balanced_accuracy": 0.37845849802371545,
+    "max_balanced_accuracy": 0.708498023715415
+  },
+  "pca_16": {
+    "n_folds": 10,
+    "mean_balanced_accuracy": 0.5362531452148156,
+    "std_balanced_accuracy": 0.0943285097974992,
+    "min_balanced_accuracy": 0.3547430830039526,
+    "max_balanced_accuracy": 0.717391304347826
+  },
+  "pca_32": {
+    "n_folds": 10,
+    "mean_balanced_accuracy": 0.5557647205959563,
+    "std_balanced_accuracy": 0.07804016256716968,
+    "min_balanced_accuracy": 0.40178571428571425,
+    "max_balanced_accuracy": 0.642292490118577
+  },
+  "pca_64": {
+    "n_folds": 10,
+    "mean_balanced_accuracy": 0.5298879857747135,
+    "std_balanced_accuracy": 0.05779716387947102,
+    "min_balanced_accuracy": 0.43452380952380953,
+    "max_balanced_accuracy": 0.592885375494071
+  },
+  "pca_8": {
+    "n_folds": 10,
+    "mean_balanced_accuracy": 0.5265139751552794,
+    "std_balanced_accuracy": 0.02267003370593296,
+    "min_balanced_accuracy": 0.5,
+    "max_balanced_accuracy": 0.5731225296442688
+  }
+}

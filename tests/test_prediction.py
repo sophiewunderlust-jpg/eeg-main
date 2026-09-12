@@ -37,6 +37,11 @@ def test_prediction_does_not_use_cue_class(tmp_path, monkeypatch):
     raw.set_annotations(mne.Annotations([1,7],[4.1,4.1],['T1','T2']))
     monkeypatch.setattr(prepare,'load_raw',lambda *a,**k: raw.copy())
     before=predict_edf(Path('S001R04.edf'),path)
+    with_targets=predict_edf(Path('S001R04.edf'),path,show_targets=True)
+    assert [r['correct_label'] for r in with_targets['predictions']]==['left_fist','right_fist']
+    for plain, annotated in zip(before['predictions'],with_targets['predictions']):
+        assert all(annotated[k]==v for k,v in plain.items())
+        assert annotated['correct']==(annotated['predicted_label']==annotated['correct_label'])
     raw.set_annotations(mne.Annotations([1,7],[4.1,4.1],['T2','T1']))
     after=predict_edf(Path('S001R04.edf'),path)
     assert before==after

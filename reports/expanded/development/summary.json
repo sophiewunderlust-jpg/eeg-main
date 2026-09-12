@@ -1,0 +1,44 @@
+{
+  "lda": {
+    "n_folds": 80,
+    "mean_balanced_accuracy": 0.5905275573489772,
+    "std_balanced_accuracy": 0.11373492438576412,
+    "min_balanced_accuracy": 0.3053359683794466,
+    "max_balanced_accuracy": 0.8571428571428571
+  },
+  "logreg": {
+    "n_folds": 80,
+    "mean_balanced_accuracy": 0.5919436176015228,
+    "std_balanced_accuracy": 0.1124590937402893,
+    "min_balanced_accuracy": 0.32806324110671936,
+    "max_balanced_accuracy": 0.8571428571428571
+  },
+  "pca_16": {
+    "n_folds": 80,
+    "mean_balanced_accuracy": 0.5977259323008246,
+    "std_balanced_accuracy": 0.11263111026965136,
+    "min_balanced_accuracy": 0.2638339920948617,
+    "max_balanced_accuracy": 0.8571428571428572
+  },
+  "pca_32": {
+    "n_folds": 80,
+    "mean_balanced_accuracy": 0.6020884928309695,
+    "std_balanced_accuracy": 0.1156198945983785,
+    "min_balanced_accuracy": 0.3320158102766798,
+    "max_balanced_accuracy": 0.8873517786561265
+  },
+  "pca_64": {
+    "n_folds": 80,
+    "mean_balanced_accuracy": 0.593913081105061,
+    "std_balanced_accuracy": 0.11708573091243497,
+    "min_balanced_accuracy": 0.2865612648221344,
+    "max_balanced_accuracy": 0.8571428571428571
+  },
+  "pca_8": {
+    "n_folds": 80,
+    "mean_balanced_accuracy": 0.5547981943153315,
+    "std_balanced_accuracy": 0.08147478564036302,
+    "min_balanced_accuracy": 0.4308300395256917,
+    "max_balanced_accuracy": 0.7964426877470356
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "no_pca": {
+    "n_folds": 20,
+    "mean_balanced_accuracy": 0.5374608664282577,
+    "std_balanced_accuracy": 0.05052683923293547,
+    "min_balanced_accuracy": 0.4583333333333333,
+    "max_balanced_accuracy": 0.6511857707509882
+  },
+  "pca_32": {
+    "n_folds": 20,
+    "mean_balanced_accuracy": 0.5569328057843503,
+    "std_balanced_accuracy": 0.07493497792999124,
+    "min_balanced_accuracy": 0.4426877470355731,
+    "max_balanced_accuracy": 0.7114624505928854
+  }
+}

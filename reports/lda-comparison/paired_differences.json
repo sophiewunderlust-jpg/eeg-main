@@ -1,0 +1,68 @@
+{
+  "subject-grouped": {
+    "bandpower": {
+      "mean_difference_lda_minus_lr": 0.006549909853685598,
+      "paired_bootstrap_95_ci": [
+        -0.00690764553429029,
+        0.020195684369025337
+      ],
+      "lda_wins": 5,
+      "ties": 3,
+      "folds": 10
+    },
+    "csp": {
+      "mean_difference_lda_minus_lr": -0.002182147562582343,
+      "paired_bootstrap_95_ci": [
+        -0.012862524703557313,
+        0.010770750988142303
+      ],
+      "lda_wins": 1,
+      "ties": 6,
+      "folds": 10
+    }
+  },
+  "run-grouped": {
+    "bandpower": {
+      "mean_difference_lda_minus_lr": -0.0066690699351117004,
+      "paired_bootstrap_95_ci": [
+        -0.013698630136986245,
+        0.0
+      ],
+      "lda_wins": 0,
+      "ties": 1,
+      "folds": 3
+    },
+    "csp": {
+      "mean_difference_lda_minus_lr": 0.011235279980773857,
+      "paired_bootstrap_95_ci": [
+        0.0,
+        0.02685652487382839
+      ],
+      "lda_wins": 2,
+      "ties": 1,
+      "folds": 3
+    }
+  },
+  "followup-heldout": {
+    "bandpower": {
+      "mean_difference_lda_minus_lr": 0.016024138904573697,
+      "paired_bootstrap_95_ci": [
+        0.005953086768304167,
+        0.02929658973273105
+      ],
+      "lda_wins": 10,
+      "ties": 10,
+      "folds": 20
+    },
+    "csp": {
+      "mean_difference_lda_minus_lr": 8.70898425246347e-05,
+      "paired_bootstrap_95_ci": [
+        -0.013466140441683911,
+        0.012488577545642763
+      ],
+      "lda_wins": 5,
+      "ties": 9,
+      "folds": 20
+    }
+  }
+}
